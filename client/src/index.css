@@ -1,0 +1,28 @@
+body {
+  background-color: #111827 !important;
+  overflow-x: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid rgb(126 34 206);
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+.text-smaller {
+  font-size: 0.7rem;
+}
+
+.icon-small {
+  font-size: 1.35rem !important;
+}
