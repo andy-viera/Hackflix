@@ -26,3 +26,7 @@ body {
 .icon-small {
   font-size: 1.35rem !important;
 }
+
+svg.star-svg {
+  display: inline;
+}

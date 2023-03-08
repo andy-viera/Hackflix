@@ -101,12 +101,12 @@ export default function SearchByTitle() {
               <div className="grid grid-cols-4 gap-4 mt-16">
                 {filteredMovies.map((movie) =>
                   movie.poster_path ? (
-                    <Link to={`/movies/${movie.id}`}>
+                    <Link to={`/movie/${movie.id}`}>
                       <img
                         key={movie.id}
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                         alt={movie.title}
-                        className="rounded  mx-auto"
+                        className="rounded mx-auto hover:scale-105 transition duration-700 ease-in-out"
                       />
                     </Link>
                   ) : (

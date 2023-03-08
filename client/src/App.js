@@ -1,10 +1,14 @@
 import "tailwindcss/tailwind.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import MovieDetails from "./components/MovieDetails";
 import SearchByTitle from "./components/SearchByTitle";
+import SearchByRating from "./components/SearchByRating";
+import NotFound404 from "./components/NotFound404";
+import useIsOnline from "./hooks/useIsOnline";
+import UserOffline from "./components/UserOffline";
 
 function App() {
   const [heroMovieData, setHeroMovieData] = useState([]);
@@ -40,6 +44,11 @@ function App() {
     };
     getRankingMovies();
   }, []);
+  const isOnline = useIsOnline();
+
+  if (!isOnline) {
+    return <UserOffline />;
+  }
 
   return (
     <div className="App bg-gray-900 ">
@@ -57,18 +66,24 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/movies/:movieid" element={<MovieDetails />}></Route>
+        <Route path="/movie/:movieid" element={<MovieDetails />}></Route>
         <Route
           path="/movies/search-by-title"
-          element={
-            <SearchByTitle
-              latestMovieData={latestMovieData}
-              setLatestMovieData={setLatestMovieData}
-            />
-          }
+          element={<SearchByTitle />}
         ></Route>
-        {/* <Route path="*" element={<Eror404/>}>
-        </Route> */}
+        <Route
+          path="/movies/search-by-rating"
+          element={<SearchByRating />}
+        ></Route>
+        <Route
+          path="/peliculas/buscar-por-titulo"
+          element={<Navigate replace to="/movies/search-by-title" />}
+        ></Route>
+        <Route
+          path="/movie/search-by-title"
+          element={<Navigate replace to="/movies/search-by-title" />}
+        ></Route>
+        <Route path="*" element={<NotFound404 />}></Route>
       </Routes>
     </div>
   );

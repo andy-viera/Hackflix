@@ -31,7 +31,7 @@ export default function Movie({ movieData }) {
   return (
     <div className="relative">
       <>
-        <Link to={`/movies/${movieData.id}`}>
+        <Link to={`/movie/${movieData.id}`}>
           {movieData.poster_path ? (
             <img
               src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`}

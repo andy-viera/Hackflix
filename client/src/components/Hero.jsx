@@ -49,11 +49,8 @@ export default function Hero({ heroMovieData, setHeroMovieData }) {
                   {movie.title}
                 </h1>
                 <p className="text-lg text-gray-300 mb-10">{movie.overview}</p>
-                <a
-                  href="#"
-                  className="rounded-full bg-gradient-to-r from-purple-700 hover:bg-purple-700 hover:scale-105 transition duration-300 ease-in-out text-white px-3 py-1.5 w-fit flex"
-                >
-                  <Link to={`movies/${movie.id}`}>
+                <Link to={`movie/${movie.id}`}>
+                  <div className="rounded-full bg-gradient-to-r from-purple-700 hover:bg-purple-700 hover:scale-105 transition duration-300 ease-in-out text-white px-3 py-1.5 w-fit flex">
                     <div className="flex align-baseline">
                       <span className="mr-2 text-xl ">More Info </span>{" "}
                       <span>
@@ -61,8 +58,8 @@ export default function Hero({ heroMovieData, setHeroMovieData }) {
                         <InfoOutlinedIcon />
                       </span>
                     </div>
-                  </Link>
-                </a>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
