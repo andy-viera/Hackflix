@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const getHeroMovies = async () => {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&sort_by=release_date.desc&page=1`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&include_adult=false&sort_by=release_date.desc&page=1`
       );
       setHeroMovieData(response.data.results);
     };
@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const getLatestMovies = async () => {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&sort_by=release_date.desc`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&include_adult=false&sort_by=release_date.desc`
       );
       setLatestMovieData(response.data.results);
     };
@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     const getRankingMovies = async () => {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}`
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&include_adult=false`
       );
       setRankingMovieData(response.data.results);
     };
