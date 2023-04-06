@@ -36,7 +36,7 @@ export default function Navbar() {
           : "bg-transparent transition duration-200 ease-in-out pt-2"
       }`}
     >
-      <div className="px-2 mx-16">
+      <div className="px-2 mx-5 sm:mx-12 md:mx-14 lg:mx-16 ">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link to={"/"}>
