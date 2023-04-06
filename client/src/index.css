@@ -1,6 +1,6 @@
 body {
   background-color: #111827 !important;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 @keyframes spin {
