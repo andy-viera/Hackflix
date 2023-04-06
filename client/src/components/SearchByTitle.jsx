@@ -98,7 +98,7 @@ export default function SearchByTitle() {
         <div className="w-3/4 mx-auto">
           {filteredMovies.length > 0 && movieTitleInput !== "" ? (
             <>
-              <div className="grid grid-cols-4 gap-4 mt-16">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-16">
                 {filteredMovies.map((movie) =>
                   movie.poster_path ? (
                     <Link to={`/movie/${movie.id}`}>

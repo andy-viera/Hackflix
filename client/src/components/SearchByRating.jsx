@@ -63,7 +63,7 @@ export default function SearchByRating() {
             hasMore={true}
             loader={<div className="spinner"></div>}
           >
-            <div className="grid grid-cols-4 gap-4 mt-16">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 mt-16">
               {rankingMovieData.map((movie) =>
                 movie.poster_path ? (
                   <Link to={`/movie/${movie.id}`}>

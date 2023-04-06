@@ -40,7 +40,7 @@ export default function Latest({ latestMovieData, setLatestMovieData }) {
   }, [loaderRef, latestMovieData]);
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
       {latestMovieData && (
         <>
           {latestMovieData.map((movie) => {
