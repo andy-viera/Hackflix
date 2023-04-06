@@ -70,7 +70,8 @@ export default function Movie({ movieData }) {
                         <span className="text-base">/10</span>
                       </div>
                       <div className="text-base">
-                        {movieData.release_date.slice(0, 4)}
+                        {movieData.release_date &&
+                          movieData.release_date.slice(0, 4)}
                       </div>
                     </div>
                   </div>
