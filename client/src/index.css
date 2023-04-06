@@ -30,3 +30,8 @@ body {
 svg.star-svg {
   display: inline;
 }
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
