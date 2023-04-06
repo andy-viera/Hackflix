@@ -70,7 +70,7 @@ export default function MovieDetails() {
                   </span>
                 </div>
                 <div className="text-purple-700 text-xl bg-gray-800 rounded-full py-1 px-3 ">
-                  {movieDetails.poster_path &&
+                  {movieDetails.release_date &&
                     movieDetails.release_date.slice(0, 4)}
                 </div>
               </div>
