@@ -28,12 +28,16 @@ export default function Navbar() {
     setDropdownVisible(false);
   };
 
+  const handleMouseClick = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 ${
         scrolled
           ? "bg-gray-900/60 transition duration-300 ease-in-out backdrop-filter backdrop-blur-md"
-          : "bg-transparent transition duration-200 ease-in-out pt-2"
+          : "bg-transparent transition duration-300 ease-in-out pt-2"
       }`}
     >
       <div className="px-2 mx-5 sm:mx-12 md:mx-14 lg:mx-16 ">
@@ -49,21 +53,22 @@ export default function Navbar() {
             <button
               id="dropdownHoverButton"
               onMouseEnter={handleMouseEnter}
-              className="relative flex items-center text-white text-sm font-medium bg-transparent outline outline-2 outline-purple-700 px-4 py-1.5 rounded-full mb-0 hover:bg-purple-700 transition delay-150 ease-in-out"
+              onClick={handleMouseClick}
+              className="relative flex items-center text-white text-sm font-medium bg-transparent border-2 border-solid border-purple-700 px-4 py-1.5 mb-0 hover:bg-purple-700 transition delay-150 ease-in-out rounded-full"
               type="button"
             >
               Search by{" "}
               <svg
-                class="w-4 h-4 ml-2"
+                className="w-4 h-4 ml-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="3"
                   d="M19 9l-7 7-7-7"
                 ></path>
               </svg>
@@ -73,6 +78,7 @@ export default function Navbar() {
                 className="absolute top-10 z-10 rounded-lg shadow bg-gray-700/25 backdrop-filter backdrop-blur-md w-40"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={handleMouseClick}
               >
                 <ul className="text-sm text-gray-700 dark:text-gray-200">
                   <li>

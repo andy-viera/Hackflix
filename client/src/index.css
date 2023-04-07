@@ -9,6 +9,18 @@ body {
   }
 }
 
+::selection {
+  background-color: rgb(88 28 135);
+}
+
+::-moz-selection {
+  background-color: rgb(88 28 135);
+}
+
+::-ms-selection {
+  background-color: rgb(88 28 135);
+}
+
 .spinner {
   display: inline-block;
   width: 1.5rem;
@@ -34,4 +46,8 @@ svg.star-svg {
 .slick-prev,
 .slick-next {
   display: none !important;
+}
+
+.border-input {
+  border: 2px solid rgb(88 28 135) !important;
 }

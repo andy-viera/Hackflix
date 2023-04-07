@@ -8,7 +8,7 @@ export default function FilmCategories({
   rankingMovieData,
   setRankingMovieData,
 }) {
-  const [directoryState, setDirectoryState] = useState("");
+  const [directoryState, setDirectoryState] = useState("latest");
 
   const handleLatestClick = () => {
     setDirectoryState("latest");
@@ -27,13 +27,23 @@ export default function FilmCategories({
 
         <h4
           onClick={handleLatestClick}
-          className="text-white text-lg font-light mr-4 sm:mr-4 md:mr-5 lg:mr-8 rounded-full bg-purple-800/70 hover:bg-purple-700/30 hover:scale-105 transition duration-300 ease-in-out px-3.5 py-1 cursor-pointer"
+          className={`
+            ${
+              directoryState === "latest"
+                ? "bg-purple-800/90"
+                : "bg-purple-800/40"
+            }  text-white text-lg font-light mr-4 sm:mr-4 md:mr-5 lg:mr-8 rounded-full hover:scale-105 transition duration-300 ease-in-out px-3.5 py-1 cursor-pointer`}
         >
           Latest
         </h4>
         <h4
           onClick={handleRankingClick}
-          className="text-white text-lg font-light rounded-full bg-purple-800/70 hover:bg-purple-700/30 hover:scale-105 transition duration-300 ease-in-out px-3.5 py-1 cursor-pointer"
+          className={`
+            ${
+              directoryState === "ranking"
+                ? "bg-purple-800/90"
+                : "bg-purple-800/40"
+            }  text-white text-lg font-light mr-4 sm:mr-4 md:mr-5 lg:mr-8 rounded-full hover:scale-105 transition duration-300 ease-in-out px-3.5 py-1 cursor-pointer`}
         >
           Ranking
         </h4>

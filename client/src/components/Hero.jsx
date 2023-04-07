@@ -46,10 +46,12 @@ export default function Hero({ heroMovieData, setHeroMovieData }) {
             >
               <div className="absolute inset-0 w-4/5 mx-auto top-1/4">
                 {" "}
-                <h1 className="font-bold text-6xl text-white mb-5">
+                <h1 className="font-bold text-3xl md:text-6xl text-white mb-5">
                   {movie.title}
                 </h1>
-                <p className="text-lg text-gray-300 mb-10">{movie.overview}</p>
+                <p className="text-md md:text-lg text-gray-300 mb-10">
+                  {movie.overview}
+                </p>
                 <Link to={`movie/${movie.id}`}>
                   <div className="rounded-full bg-gradient-to-r from-purple-700 hover:bg-purple-700 hover:scale-105 transition duration-300 ease-in-out text-white px-3 py-1.5 w-fit flex">
                     <div className="flex align-baseline">

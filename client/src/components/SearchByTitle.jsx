@@ -74,7 +74,7 @@ export default function SearchByTitle() {
         <div className="flex justify-center">
           <TextField
             variant="standard"
-            className="w-2/3 placeholder:text-base outline outline-2 outline-purple-700 focus:outline-none text-white text-sm bg-gray-800/25 px-4 py-3 rounded-full mb-0"
+            className="w-2/3 placeholder:text-base border-input focus:border-none text-white text-sm bg-gray-800/25 px-4 py-3 rounded-full mb-0"
             value={movieTitleInput}
             onChange={(event) => setMovieTitleInput(event.target.value)}
             InputProps={{
@@ -89,7 +89,7 @@ export default function SearchByTitle() {
               disableUnderline: true,
               style: {
                 color: "white",
-                height: "48px", // Set the height to the desired value
+                height: "48px",
               },
             }}
           />
@@ -120,11 +120,11 @@ export default function SearchByTitle() {
               <div ref={loaderRef}></div>
             </>
           ) : movieTitleInput === "" ? (
-            <div className="w-1/2 mt-16 rounded bg-purple-700/90 py-3.5 mx-auto text-white text-center font-bold">
+            <div className="w-3/4 sm:w-1/2 mt-16 rounded bg-purple-700/90 py-3.5 mx-auto text-white text-center font-bold">
               Start typing to search for a specific title!
             </div>
           ) : (
-            <div className="w-1/2 mt-16 rounded bg-purple-700/90 py-3.5 mx-auto text-white text-center font-bold">
+            <div className="w-3/4 sm:w-1/2 mt-16 rounded bg-purple-700/90 py-3.5 mx-auto text-white text-center font-bold">
               No movies matched the specified criteria
             </div>
           )}

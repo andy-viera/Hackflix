@@ -65,7 +65,9 @@ export default function Movie({ movieData }) {
                     <div className="mb-3 flex items-baseline">
                       <div className="text-purple-700 mr-4">
                         <span className="text-lg">
-                          {movieData.vote_average}
+                          {(
+                            Math.round(movieData.vote_average * 10 * 10) / 100
+                          ).toFixed(1)}
                         </span>
                         <span className="text-base">/10</span>
                       </div>
